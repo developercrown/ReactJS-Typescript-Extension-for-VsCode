@@ -1,0 +1,101 @@
+{
+  "name": "my-reactjs-scripts",
+  "displayName": "My ReactJS Scripts",
+  "description": "Adds custom scripts for React development",
+  "version": "0.0.1",
+  "publisher": "your-publisher-name",
+  "engines": {
+      "vscode": "^1.55.0"
+  },
+  "categories": [
+      "Other"
+  ],
+  "activationEvents": [
+      "onCommand:myReactScripts.newComponent",
+      "onCommand:myReactScripts.newInterface",
+      "onCommand:myReactScripts.newModel",
+      "onCommand:myReactScripts.newHook",
+      "onCommand:myReactScripts.newCSS",
+      "onCommand:myReactScripts.newView"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+      "commands": [
+          {
+              "command": "myReactScripts.newComponent",
+              "title": "New Component"
+          },
+          {
+              "command": "myReactScripts.newInterface",
+              "title": "New Interface"
+          },
+          {
+              "command": "myReactScripts.newModel",
+              "title": "New Model"
+          },
+          {
+              "command": "myReactScripts.newHook",
+              "title": "New Hook"
+          },
+          {
+              "command": "myReactScripts.newCSS",
+              "title": "New CSS"
+          },
+          {
+              "command": "myReactScripts.newView",
+              "title": "New View"
+          }
+      ],
+      "menus": {
+          "explorer/context": [
+              {
+                  "command": "myReactScripts.newComponent",
+                  "title": "MyReactJS: New Component",
+                  "group": "myReactJS"
+              },
+              {
+                  "command": "myReactScripts.newInterface",
+                  "title": "MyReactJS: New Interface",
+                  "group": "myReactJS"
+              },
+              {
+                  "command": "myReactScripts.newModel",
+                  "title": "MyReactJS: New Model",
+                  "group": "myReactJS"
+              },
+              {
+                  "command": "myReactScripts.newHook",
+                  "title": "MyReactJS: New Hook",
+                  "group": "myReactJS"
+              },
+              {
+                  "command": "myReactScripts.newCSS",
+                  "title": "MyReactJS: New CSS",
+                  "group": "myReactJS"
+              },
+              {
+                  "command": "myReactScripts.newView",
+                  "title": "MyReactJS: New View",
+                  "group": "myReactJS"
+              }
+          ]
+      }
+  },
+  "scripts": {
+      "vscode:prepublish": "npm run compile",
+      "compile": "tsc -p ./",
+      "watch": "tsc -watch -p ./",
+      "pretest": "npm run compile && npm run lint",
+      "lint": "eslint src --ext ts",
+      "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+      "@types/node": "^14.14.37",
+      "@types/vscode": "^1.55.0",
+      "typescript": "^4.2.3",
+      "vscode-test": "^1.5.0",
+      "eslint": "^7.25.0",
+      "eslint-config-airbnb-base": "^14.2.1",
+      "eslint-plugin-import": "^2.22.1"
+  }
+}
