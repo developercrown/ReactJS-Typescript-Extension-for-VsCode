@@ -1,0 +1,210 @@
+{
+    "React Function Log": {
+        "prefix": "log",
+        "body": [
+            "console.log(${4});"
+        ],
+        "description": "Crear la estructura de un console log"
+    },
+    "React import": {
+        "prefix": "import",
+        "body": [
+            "import ${1} from '$2'"
+        ],
+        "description": "Estructura de importacion basica"
+    },
+    "React use structure": {
+        "prefix": "use",
+        "body": [
+            "const { $1 } = use$2();"
+        ],
+        "description": "Estructura de uso de hooks basica"
+    },
+    "React import css module structure": {
+        "prefix": "cssmodule",
+        "body": [
+            "import styles from '$1.module.css'"
+        ],
+        "description": "Estructura de importacion para css modules"
+    },
+    "React Function Component": {
+        "prefix": "rfc",
+        "body": [
+            "import React from 'react';",
+            "",
+            "interface ${1:Props} {",
+            "    ${2:propName}: ${3:string};",
+            "}",
+            "",
+            "const ${4:ComponentName}: React.FC<${1:Props}> = ({ ${2:propName} }) => {",
+            "    return <div>${5:Component content}</div>;",
+            "};",
+            "",
+            "export default ${4:ComponentName};"
+        ],
+        "description": "Creates a React Function Component with TypeScript interface"
+    },
+    "React Class Component": {
+        "prefix": "rcc",
+        "body": [
+            "import React, { Component } from 'react';",
+            "",
+            "interface ${1:Props} {",
+            "    ${2:propName}?: ${3:string};",
+            "}",
+            "",
+            "interface ${4:State} {",
+            "    ${5:stateName}?: ${6:string};",
+            "}",
+            "",
+            "class ${7:ComponentName} extends Component<${1:Props}, ${4:State}> {",
+            "    state: ${4:State} = {",
+            "        ${5:stateName}: ${8:initialValue}",
+            "    };",
+            "",
+            "    render() {",
+            "        return <div>${9:Component content}</div>;",
+            "    }",
+            "}",
+            "",
+            "export default ${7:ComponentName};"
+        ],
+        "description": "Creates a React Class Component with TypeScript interfaces"
+    },
+    "React Hook": {
+        "prefix": "rh",
+        "body": [
+            "import { useState, useEffect } from 'react';",
+            "",
+            "const use${1:HookName} = () => {",
+            "    const [${2:state}, set${2/(.*)/${1:/capitalize}/}] = useState<${3:string}>(${4:initialValue});",
+            "",
+            "    useEffect(() => {",
+            "        ${5:// Effect logic here}",
+            "        return () => {",
+            "            ${6:// Cleanup logic here}",
+            "        };",
+            "    }, [${7:dependencies}]);",
+            "",
+            "    return { ${2:state}, set${2/(.*)/${1:/capitalize}/} };",
+            "};",
+            "",
+            "export default use${1:HookName};"
+        ],
+        "description": "Creates a custom React Hook"
+    },
+    "React useEffect": {
+        "prefix": "effect",
+        "body": [
+            "useEffect(() => {",
+            "    ${1:// Effect logic}",
+            "    return () => {",
+            "        ${2:// Cleanup logic}",
+            "    };",
+            "}, [${3:dependencies}]);"
+        ],
+        "description": "React useEffect hook"
+    },
+    "React useState": {
+        "prefix": "state",
+        "body": [
+            "const [${1:state}, set${1/(.*)/${1:/capitalize}/}] = useState(${2:initialState});"
+        ],
+        "description": "React useState hook"
+    },
+    "TypeScript Interface": {
+        "prefix": "interface",
+        "body": [
+            "interface ${1:InterfaceName} {",
+            "    ${2:property}: ${3:type};",
+            "}"
+        ],
+        "description": "Creates a TypeScript interface"
+    },
+    "TypeScript Class": {
+        "prefix": "class",
+        "body": [
+            "class ${1:ClassName} {",
+            "    ${2:property}: ${3:type};",
+            "",
+            "    constructor(${2:property}: ${3:type}) {",
+            "        this.${2:property} = ${2:property};",
+            "    }",
+            "",
+            "    ${4:method}(${5:params}): ${6:returnType} {",
+            "        ${7:// Method logic}",
+            "    }",
+            "}"
+        ],
+        "description": "Creates a TypeScript class"
+    },
+    "JavaScript Function Declaration": {
+        "prefix": "fun",
+        "body": [
+            "function ${1:functionName}(${2:parameters}) {",
+            "    ${3:// function body}",
+            "    return;",
+            "}"
+        ],
+        "description": "Creates a JavaScript function declaration"
+    },
+    "JavaScript Arrow Function": {
+        "prefix": "fn",
+        "body": [
+            "const ${1:functionName} = (${2:parameters}) => {",
+            "    ${3:// function body}",
+            "    return;",
+            "};"
+        ],
+        "description": "Creates a JavaScript arrow function"
+    },
+    "JavaScript Promise": {
+        "prefix": "promise",
+        "body": [
+            "const promise = new Promise((resolve, reject) => {",
+            "    ${1:// promise logic}",
+            "    if (${2:condition}) {",
+            "        resolve(${3:result});",
+            "    } else {",
+            "        reject(${4:error});",
+            "    }",
+            "});",
+            "",
+            "promise.then((result) => {",
+            "    ${5:// handle result}",
+            "}).catch((error) => {",
+            "    ${6:// handle error}",
+            "});"
+        ],
+        "description": "Creates a JavaScript Promise"
+    },
+    "Structure to use promise with then and catch": {
+        "prefix": "useprom",
+        "body": [
+            "${1:promise}.then((response: any) => {",
+            "   ${2:console.log(response)};",
+            "}).catch((err: any) => {",
+            "   ${3:console.log(err)};",
+            "});"
+        ],
+        "description": "Creates a Structure to use a promise format"
+    },
+    "Structure to use a generic object": {
+        "prefix": "obj",
+        "body": [
+            "const $1: $2 = {",
+            "    $3",
+            "}"
+        ],
+        "description": "Creates a Structure to use a generic object"
+    },
+    "Structure to use a generic array": {
+        "prefix": "array",
+        "body": [
+            "const $1: Array<${2:any}> = [",
+            "   $3",
+            "];"
+        ],
+        "description": "Creates a Structure to use a generic object"
+    }
+}

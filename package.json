@@ -115,7 +115,25 @@
           "group": "myReactScripts"
         }
       ]
-    }
+    },
+    "snippets": [
+      {
+        "language": "typescriptreact",
+        "path": "./src/snippets/reacttsx/snippets.json"
+      },
+      {
+          "language": "javascriptreact",
+          "path": "./src/snippets/reacttsx/snippets.json"
+      },
+      {
+          "language": "typescript",
+          "path": "./src/snippets/reacttsx/snippets.json"
+      },
+      {
+          "language": "javascript",
+          "path": "./src/snippets/reacttsx/snippets.json"
+      }
+    ]
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
