@@ -3,14 +3,26 @@
   "displayName": "My ReactJS Scripts",
   "description": "Adds custom scripts for React development",
   "version": "0.0.1",
-  "publisher": "your-publisher-name",
+  "publisher": "devcrown-miti-corona",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/developercrown/ReactJS-Typescript-Extension-for-VsCode.git"
+  },
   "engines": {
     "vscode": "^1.55.0"
   },
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onCommand:myReactScripts.newComponent",
+    "onCommand:myReactScripts.newInterface",
+    "onCommand:myReactScripts.newModel",
+    "onCommand:myReactScripts.newHook",
+    "onCommand:myReactScripts.newCSS",
+    "onCommand:myReactScripts.newView",
+    "onCommand:myReactScripts.newModule"
+  ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
@@ -53,6 +65,11 @@
         "command": "myReactScripts.newModule",
         "category": "ReactJs Project",
         "title": "Crear Modulo"
+      },
+      {
+        "command": "myReactScripts.newType",
+        "category": "ReactJs Project",
+        "title": "Crear Tipo"
       }
     ],
     "submenus": [
@@ -107,6 +124,10 @@
         {
           "command": "myReactScripts.newModule",
           "group": "ReactScripts-S0"
+        },
+        {
+          "command": "myReactScripts.newType",
+          "group": "ReactScripts-S1"
         }
       ],
       "explorer/context": [
@@ -122,16 +143,16 @@
         "path": "./src/snippets/reacttsx/snippets.json"
       },
       {
-          "language": "javascriptreact",
-          "path": "./src/snippets/reacttsx/snippets.json"
+        "language": "javascriptreact",
+        "path": "./src/snippets/reacttsx/snippets.json"
       },
       {
-          "language": "typescript",
-          "path": "./src/snippets/reacttsx/snippets.json"
+        "language": "typescript",
+        "path": "./src/snippets/reacttsx/snippets.json"
       },
       {
-          "language": "javascript",
-          "path": "./src/snippets/reacttsx/snippets.json"
+        "language": "javascript",
+        "path": "./src/snippets/reacttsx/snippets.json"
       }
     ]
   },
@@ -146,11 +167,14 @@
   "devDependencies": {
     "@types/jest": "^29.5.12",
     "@types/mocha": "^10.0.6",
-    "@types/node": "^14.14.37",
+    "@types/node": "^14.18.63",
     "@types/vscode": "^1.55.0",
     "eslint": "^7.25.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.22.1",
+    "jest": "^29.7.0",
+    "mocha": "^10.4.0",
+    "ts-jest": "^29.1.5",
     "typescript": "^4.2.3",
     "vscode-test": "^1.5.0"
   }

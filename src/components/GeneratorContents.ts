@@ -140,6 +140,10 @@ ${name}.defaultProps = {
 export default ${name};
 `;
 
+const typeContent = (name: string) => `const ${name}TypeValues = [];
+type ${name}Type = typeof ${name}TypeValues[number];
+export default ${name}Type;`;
+
 export{
     cssModuleContent,
     moduleContent,
@@ -149,5 +153,6 @@ export{
     modelContent,
     hookContent,
     cssContent,
-    viewContent
+    viewContent,
+    typeContent
 }

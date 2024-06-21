@@ -1,4 +1,18 @@
 {
+    "React Function use consts": {
+        "prefix": "const",
+        "body": [
+            "const $1 = $2;"
+        ],
+        "description": "Estructura para constantes"
+    },
+    "React Function Join Array String Classes": {
+        "prefix": "ajoin",
+        "body": [
+            "[$1].join(' ')"
+        ],
+        "description": "Crear la estructura de arreglo para clases que se formatea separado por espacios"
+    },
     "React Function Log": {
         "prefix": "log",
         "body": [
